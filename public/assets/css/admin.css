@@ -1,0 +1,76 @@
+body.admin-body {
+    background: linear-gradient(135deg, #f4f6f8 0%, #eef2f7 100%);
+    min-height: 100vh;
+}
+
+.admin-header {
+    background: #1c2a38;
+    color: #fff;
+}
+
+.panel-card {
+    border: 1px solid #dfe4ea;
+    border-radius: 14px;
+}
+
+.panel-card .card-body {
+    padding: 14px;
+}
+
+.small-table {
+    max-height: 420px;
+}
+
+.small-table table {
+    margin-bottom: 0;
+}
+
+.small-table thead th {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+}
+
+.sortable-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    min-height: 24px;
+}
+
+.sortable-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px solid #dfe4ea;
+    background: #f8fafc;
+    border-radius: 10px;
+    padding: 7px 10px;
+    cursor: move;
+    user-select: none;
+}
+
+.sortable-item.dragging {
+    opacity: .45;
+}
+
+.drag-handle {
+    color: #6b7280;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+#discount-form label {
+    font-size: .8rem;
+}
+
+#discount-form .small label {
+    border: 1px solid #dde3ea;
+    border-radius: 8px;
+    padding: 4px 8px;
+    background: #fff;
+}

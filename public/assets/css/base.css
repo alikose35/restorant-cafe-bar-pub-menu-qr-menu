@@ -1,0 +1,294 @@
+﻿:root {
+    --bg: #f7f4ee;
+    --surface: #ffffff;
+    --text: #222222;
+    --muted: #6c6c6c;
+    --accent: #d44f2a;
+    --line: #ece6dc;
+    --price: #1d4a38;
+    --badge: #753e28;
+    --blob1: #ffe6cc;
+    --blob2: #d9f3ff;
+    --radius: 16px;
+    --venue-photo: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Manrope", sans-serif;
+    color: var(--text);
+    position: relative;
+    background:
+        radial-gradient(circle at 12% 10%, var(--blob1) 0%, transparent 35%),
+        radial-gradient(circle at 85% 2%, var(--blob2) 0%, transparent 28%),
+        var(--bg);
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background-image: var(--venue-photo);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: .26;
+    filter: saturate(1.1) contrast(1.03);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    background:
+        radial-gradient(900px 340px at 50% -80px, rgba(255, 255, 255, .26), transparent 70%),
+        radial-gradient(1200px 460px at 50% 110%, rgba(0, 0, 0, .14), transparent 70%);
+}
+
+.hero {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 26px 16px 12px;
+}
+
+.hero-inner h1 {
+    font-family: "Fraunces", serif;
+    margin: 0;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+}
+
+.hero-inner p {
+    margin: 8px 0 0;
+    color: var(--muted);
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: .72rem;
+    color: var(--accent);
+    margin: 0 0 6px;
+}
+
+.menu-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 16px 40px;
+}
+
+.category-block {
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    border: 1px solid color-mix(in srgb, var(--line) 88%, #ffffff);
+    border-radius: var(--radius);
+    margin-bottom: 16px;
+    padding: 16px;
+    backdrop-filter: blur(4px);
+}
+
+.category-head h2 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.category-head p {
+    margin: 4px 0 12px;
+    color: var(--muted);
+    font-size: .94rem;
+}
+
+.empty-state {
+    color: var(--muted);
+    font-size: .9rem;
+}
+
+.product-item .thumb {
+    margin: 0;
+}
+
+.product-item {
+    position: relative;
+}
+
+.price-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 2px;
+}
+
+.old-price {
+    font-size: .76rem;
+    color: var(--muted);
+    text-decoration: line-through;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    left: auto;
+    z-index: 2;
+    font-size: .66rem;
+    font-weight: 900;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    padding: 5px 9px;
+    color: #fff;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .2);
+    backdrop-filter: blur(2px);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, .2);
+}
+
+.discount-badge.badge-ribbon,
+.discount-badge:not(.badge-pill):not(.badge-tag) {
+    background: linear-gradient(110deg, #fa654c, #cf2f1d);
+    border-radius: 7px;
+    clip-path: polygon(0 0, 100% 0, 84% 50%, 100% 100%, 0 100%);
+    padding-right: 15px;
+}
+
+.discount-badge.badge-pill {
+    border-radius: 999px;
+    background: linear-gradient(110deg, #21a968, #0e7747);
+    border: 1px solid rgba(255, 255, 255, .45);
+}
+
+.discount-badge.badge-tag {
+    border-radius: 999px;
+    background: linear-gradient(110deg, #3c63ff, #2b3ecf);
+    padding-left: 20px;
+}
+
+.discount-badge.badge-tag::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, .28);
+}
+
+.product-item .thumb img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.fit-cover .product-item .thumb img {
+    object-fit: cover;
+}
+
+.fit-contain .product-item .thumb img {
+    object-fit: contain;
+    background: #fff;
+}
+
+.placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #efe7dc, #f8f4ef);
+    color: #9f8e77;
+    display: grid;
+    place-items: center;
+    font-size: .8rem;
+    border: 1px dashed #dbcbb8;
+}
+
+@media (max-width: 768px) {
+    .category-block {
+        padding: 12px;
+    }
+
+    body::before {
+        opacity: .21;
+    }
+}
+
+body.scheme-ember {
+    --bg: #f7f4ee;
+    --surface: #ffffff;
+    --text: #222222;
+    --muted: #6c6c6c;
+    --accent: #d44f2a;
+    --line: #ece6dc;
+    --price: #1d4a38;
+    --badge: #753e28;
+    --blob1: #ffe6cc;
+    --blob2: #d9f3ff;
+}
+
+body.scheme-ocean {
+    --bg: #f1f8ff;
+    --surface: #ffffff;
+    --text: #14324d;
+    --muted: #4a6378;
+    --accent: #1e88e5;
+    --line: #d7e8f9;
+    --price: #0f4d7a;
+    --badge: #1b669e;
+    --blob1: #d5ecff;
+    --blob2: #e6f8ee;
+}
+
+body.scheme-forest {
+    --bg: #f3f8f2;
+    --surface: #ffffff;
+    --text: #203327;
+    --muted: #5a6e61;
+    --accent: #2e7d32;
+    --line: #dce8dd;
+    --price: #1f5f2a;
+    --badge: #2a6f35;
+    --blob1: #dff0dc;
+    --blob2: #f7ecd8;
+}
+
+body.scheme-sunrise {
+    --bg: #fff7ef;
+    --surface: #ffffff;
+    --text: #3a2b1f;
+    --muted: #735e48;
+    --accent: #ef6c00;
+    --line: #f0deca;
+    --price: #a44700;
+    --badge: #b85a1f;
+    --blob1: #ffe7c6;
+    --blob2: #ffe3d4;
+}
+
+body.scheme-mono {
+    --bg: #f3f3f3;
+    --surface: #ffffff;
+    --text: #1f1f1f;
+    --muted: #676767;
+    --accent: #424242;
+    --line: #dfdfdf;
+    --price: #2d2d2d;
+    --badge: #525252;
+    --blob1: #e6e6e6;
+    --blob2: #ededed;
+}
+
+body.venue-restaurant {
+    --venue-photo: url('/assets/img/venue-restaurant-bg.svg');
+}
+
+body.venue-cafe {
+    --venue-photo: url('/assets/img/venue-cafe-bg.svg');
+}
+
+body.venue-bar {
+    --venue-photo: url('/assets/img/venue-bar-bg.svg');
+}
