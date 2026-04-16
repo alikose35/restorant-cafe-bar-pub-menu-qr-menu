@@ -70,16 +70,6 @@ Bu uygulama ile:
 
 ---
 
-## Ekran Görüntüleri
-
-Aşağıdaki görselleri eklemek için ekran görüntülerini `public/assets/screenshots/` klasörüne koyup dosya adlarını aynı bırakabilirsiniz.
-
-![Menü - Ana Sayfa](public/assets/screenshots/menu-home.png)
-![Admin - Dashboard](public/assets/screenshots/admin-dashboard.png)
-![Admin - İndirim Yönetimi](public/assets/screenshots/admin-discounts.png)
-![Admin - Site Ayarları](public/assets/screenshots/admin-site-settings.png)
-
----
 
 ## Teknoloji Altyapısı
 
@@ -303,31 +293,6 @@ Not: `storage/menu.sqlite` dosyası repoya eklenmez. Uygulama ilk çalıştırma
 ### 4) Route çalışmıyor
 
 Apache kullanıyorsanız `mod_rewrite` açık olmalı ve `public/.htaccess` aktif olmalı.
-
----
-
-## GitHub About Metni ve Anahtar Kelimeler
-
-### GitHub About (kopyala-yapıştır)
-
-`PHP + SQLite tabanlı, admin panelli, mobil uyumlu dijital restoran/kafe/bar menü sistemi. QR kod, otomatik indirim, tema yönetimi ve SEO ayarları içerir.`
-
-### Website
-
-`https://menu.com` (kendi domaininizle değiştirin)
-
-### Önerilen Topic Etiketleri
-
-- php
-- sqlite
-- qr-menu
-- restaurant-menu
-- cafe-menu
-- bar-menu
-- admin-panel
-- digital-menu
-- seo
-- bootstrap
 
 ---
 
